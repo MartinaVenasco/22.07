@@ -23,18 +23,20 @@ function App() {
       <CardList id="topS"
         title="Top series"
         BASE_URL='https://edgemony-backend.herokuapp.com/series'
+        mySeriesMock={""}
         modalVisibility={onHandleModal}
       />
-      <div className='my_container_series'>
-      <h1 className='my__series__title'>My Series</h1>
-      <div className="my__series">
-            {
-              mySeriesMock.map(serie => <Card title="My series"data={serie} key={serie.id} modalVisibility={onHandleModal} />)
-            }
-          </div></div>
+      
       <CardList id="topM"
         title="Top Movies"
         BASE_URL='https://edgemony-backend.herokuapp.com/movies'
+        mySeriesMock={""}
+        modalVisibility={onHandleModal}
+      />
+      <CardList id="topM"
+        title="My Series"
+        BASE_URL=''
+        mySeriesMock={mySeriesMock}
         modalVisibility={onHandleModal}
       />
       <Modal data={modalData} isVisibile={isModalVisibile} onModalClick={setModalVisibility}/>
